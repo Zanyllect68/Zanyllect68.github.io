@@ -1,0 +1,245 @@
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #222 url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), pointer;
+}
+.header {
+    background: #111;
+    color: #ff9900;
+    text-align: center;
+    padding: 24px 0 12px 0;
+    font-size: 2.2em;
+    font-family: Impact, Arial Black, sans-serif;
+    border-bottom: 4px solid #ff9900;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0 #fff;
+}
+.nav {
+    background: #222;
+    color: #fff;
+    padding: 8px 0;
+    text-align: center;
+    border-bottom: 2px solid #ff9900;
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 18px;
+    font-size: 1.1em;
+    border-right: 1px solid #ff9900;
+}
+.nav a:last-child { border-right: none; }
+.nav a:hover {
+    color: #ff9900;
+    background: #333;
+}
+.nav a, a:hover {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), pointer;
+}
+.wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    background: #222;
+}
+.sidebar {
+    background: #181818;
+    padding: 18px 12px;
+    width: 220px;
+    border-right: 3px solid #000;
+    box-shadow: 2px 0 8px #111;
+    flex-shrink: 0;
+    color: #fff;
+}
+.main {
+    padding: 32px 32px 24px 32px;
+    background: #222;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0 12px #111;
+    overflow-x: auto;
+    flex: 1 1 0;
+    min-width: 0;
+    border-left: 3px solid #000;
+    color: #fff;
+}
+h2, h3 {
+    background: #333;
+    color: #ff9900;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    font-family: Arial Black, Impact, sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 18px 0;
+    background: #181818;
+    font-size: 1em;
+    color: #fff;
+}
+td, th {
+    border: 2px solid #ff9900;
+    padding: 10px 8px;
+    text-align: left;
+}
+tbody tr:hover {
+    background: #333;
+}
+.btn {
+    display: inline-block;
+    background: #ff9900;
+    color: #222;
+    border: 2px outset #ff9900;
+    font-weight: bold;
+    padding: 8px 18px;
+    font-size: 1em;
+    border-radius: 6px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-family: Verdana, Arial, sans-serif;
+    box-shadow: 1px 1px 4px #111;
+    transition: background 0.2s, color 0.2s;
+}
+.btn:hover {
+    background: #222;
+    color: #ff9900;
+    border: 2px inset #ff9900;
+    box-shadow: 2px 2px 8px #ff9900;
+}
+.footer {
+    background: #181818;
+    color: #ff9900;
+    text-align: center;
+    padding: 10px 0 8px 0;
+    font-size: 1em;
+    border-top: 4px solid #000;
+    font-family: Verdana, Arial, sans-serif;
+    box-shadow: 0 -2px 8px #111;
+    flex-shrink: 0;
+}
+.email {
+    display: inline-block;
+    background: #ff9900;
+    color: #222;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 2px solid #222;
+    box-shadow: 1px 1px 4px #111;
+    margin-top: 4px;
+    font-size: 1em;
+    word-break: break-all;
+}
+img.gif, .giphy-embed {
+    border: 3px ridge #ff9900 !important;
+    margin: 8px 0;
+    max-width: 80px;
+    background: #222;
+    border-radius: 8px;
+}
+.gifs-row {
+    width: 100vw;
+    min-height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    background: #000;
+    padding: 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+.gifs-row img.gif, .gifs-row .giphy-embed, .gifs-row iframe {
+    flex: 1 1 0;
+    max-width: 100%;
+    margin: 0 8px;
+    background: #000;
+}
+.gif-banner {
+    width: 100vw;
+    min-height: 64px;
+    height: 64px;
+    background: #000;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    border-top: 4px solid #ff9900;
+    border-bottom: 4px solid #ff9900;
+    scrollbar-width: none;
+}
+.gif-banner img.gif, .gif-banner .giphy-embed, .gif-banner iframe {
+    height: 100%;
+    width: auto;
+    min-width: 80px;
+    max-width: 160px;
+    background: #000;
+    border-radius: 0;
+    margin: 0 !important;
+    flex: 1 1 0;
+    border: none !important;
+    object-fit: cover;
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), pointer;
+}
+.owl-float {
+    position: fixed;
+    bottom: 24px;
+    left: 0;
+    z-index: 9999;
+    width: 64px;
+    height: 64px;
+    pointer-events: none;
+    animation: owl-move 8s linear infinite alternate;
+}
+@keyframes owl-move {
+    0% { left: 0; }
+    100% { left: calc(100vw - 64px); }
+}
+@media (max-width: 800px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        box-shadow: none;
+        border-right: none;
+        border-bottom: 2px solid #ff9900;
+        margin-bottom: 12px;
+    }
+    .main {
+        padding: 18px 8px;
+        border-radius: 0 0 12px 12px;
+        border-left: none;
+    }
+    .gifs-row {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
