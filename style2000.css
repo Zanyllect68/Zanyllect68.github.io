@@ -232,6 +232,10 @@ img.gif, .giphy-embed {
         border-right: none;
         border-bottom: 2px solid #ff9900;
         margin-bottom: 12px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
     }
     .main {
         padding: 18px 8px;
@@ -241,5 +245,29 @@ img.gif, .giphy-embed {
     .gifs-row {
         flex-wrap: wrap;
         gap: 16px;
+    }
+    .gif-banner {
+        width: 100vw;
+        min-height: 48px;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+    }
+    .gif-banner img.gif, .gif-banner .giphy-embed, .gif-banner iframe {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 40px;
+        max-width: 80px;
+    }
+    #profile-pic-container {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    #profile-pic, #profile-loading {
+        width: 80px !important;
+        height: 80px !important;
     }
 }
