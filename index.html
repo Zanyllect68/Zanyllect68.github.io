@@ -213,8 +213,6 @@
           <td><a href="https://github.com/Zanyllect68/script-auto_fuzzing" target="_blank">Ver repo</a></td>
         </tr>
       </table>
-      <!-- Terminal falsa debajo de la tabla -->
-  
     </div>
   </div>
   <div class="gif-banner">
@@ -260,45 +258,6 @@
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('fade-in');
     });
-    // Terminal falsa typing
-    (() => {
-      const terminalCmd = document.getElementById('terminal-cmd');
-      const terminalCursor = document.getElementById('terminal-cursor');
-      const terminalOutput = document.getElementById('terminal-output');
-      const commands = [
-        { cmd: 'ls proyectos/', out: 'PQRS/  Votacion/  Fuzzing/' },
-        { cmd: 'cat sobre_mi.txt', out: 'Full Stack | DevOps | IA | Siempre aprendiendo' },
-        { cmd: 'echo "¡Bienvenido a mi web retro!"', out: '¡Bienvenido a mi web retro!' }
-      ];
-      let cmdIndex = 0,
-        charIndex = 0,
-        typing = true;
-      function typeCommand() {
-        if (cmdIndex >= commands.length) return;
-        const currentCmd = commands[cmdIndex].cmd;
-        if (charIndex < currentCmd.length) {
-          terminalCmd.textContent += currentCmd[charIndex++];
-          setTimeout(typeCommand, 60);
-        } else {
-          typing = false;
-          setTimeout(() => {
-            terminalOutput.innerHTML += `<div><span style="color:#ff9900;">andres@retro-web</span>:<span style="color:#fff;">~</span>$ ${currentCmd}</div>`;
-            terminalOutput.innerHTML += `<div>${commands[cmdIndex].out}</div>`;
-            terminalCmd.textContent = '';
-            charIndex = 0;
-            cmdIndex++;
-            typing = true;
-            setTimeout(typeCommand, 900);
-          }, 400);
-        }
-      }
-      typeCommand();
-      setInterval(() => {
-        terminalCursor.style.visibility = typing
-          ? (terminalCursor.style.visibility === 'hidden' ? 'visible' : 'hidden')
-          : 'visible';
-      }, 400);
-    })();
     // CRT shutdown animation
     window.addEventListener('beforeunload', function() {
       const crt = document.getElementById('crt-shutdown');
@@ -314,5 +273,3 @@
 </body>
 
 </html>
-
-
