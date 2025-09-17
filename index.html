@@ -4,17 +4,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog - Andrés Galeano</title>
+  <title>Blog -  Andrés Galeano</title>
   <link rel="stylesheet" href="style2000.css" />
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c4.png" type="image/png" />
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 1.2s;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .nav a,
+    .btn,
+    .gif-banner img {
+      transition: background 0.3s, color 0.3s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .nav a:hover,
+    .btn:hover {
+      background: #ff9900;
+      color: #222;
+      box-shadow: 0 2px 8px #111;
+      transform: scale(1.08);
+      border-radius: 8px;
+    }
+
+    .gif-banner img:hover {
+      transform: scale(1.18) rotate(-6deg);
+      box-shadow: 0 4px 16px #ff9900;
+    }
+
+    .crt-effect {
+      position: relative;
+      /* Simula scanlines CRT */
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.03) 0px,
+        rgba(0, 0, 0, 0.03) 1px,
+        transparent 2px,
+        transparent 4px
+      );
+      /* Simula distorsión/glitch */
+      filter: contrast(1.08) brightness(1.01) saturate(1.05) blur(0.2px);
+      /* Opcional: agrega un poco de vibración */
+    }
+
+    /* Opcional: texto con sombra para simular glow */
+    .crt-effect,
+    .crt-effect * {
+      text-shadow: 0 0 1px #fff, 0 0 2px #ff9900;
+    }
+
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+      color: #fff;
+      font-family: inherit;
+      text-shadow: 2px 0 #ff00c8, -2px 0 #00fff9;
+      transition: color 0.2s;
+      overflow: visible;
+    }
+
+    .glitch:hover::before,
+    .glitch:hover::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .glitch:hover::before {
+      color: #ff00c8;
+      z-index: 2;
+      left: 2px;
+      animation: glitch-anim 0.3s infinite linear alternate;
+    }
+
+    .glitch:hover::after {
+      color: #00fff9;
+      z-index: 3;
+      left: -2px;
+      animation: glitch-anim2 0.3s infinite linear alternate;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip-path: inset(0 0 60% 0);
+      }
+
+      100% {
+        clip-path: inset(40% 0 0 0);
+      }
+    }
+
+    @keyframes glitch-anim2 {
+      0% {
+        clip-path: inset(60% 0 0 0);
+      }
+
+      100% {
+        clip-path: inset(0 0 40% 0);
+      }
+    }
+
+    /* CRT shutdown animation */
+    #crt-shutdown {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #crt-shutdown.active {
+      opacity: 1;
+      animation: crt-shutdown-anim 1s forwards;
+    }
+
+    @keyframes crt-shutdown-anim {
+      0% {
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      60% {
+        opacity: 1;
+        height: 100vh;
+      }
+
+      80% {
+        opacity: 1;
+        height: 8px;
+      }
+
+      100% {
+        opacity: 1;
+        height: 0;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="crt-effect">
   <div class="header">ANDRÉS GALEANO - Web 2000s</div>
   <nav class="nav">
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
     <a href="#projects">PROJECTS</a>
+    <a href="#blog">BLOG</a>
     <a href="#contact">CONTACT</a>
     <a href="https://github.com/Zanyllect68" target="_blank">GITHUB</a>
   </nav>
@@ -24,9 +179,9 @@
         <img id="profile-loading" src="https://cdn.jsdelivr.net/gh/andrews-galeano/assets/loading.gif" alt="Cargando..." style="width:160px;height:160px;" />
         <img id="profile-pic" src="https://i.pinimg.com/736x/4a/a6/9f/4aa69f671e8d9c4608e82445e13c53ca.jpg" alt="Perfil" style="width:160px;height:160px;display:none;border-radius:20px;object-fit:cover;" />
       </div>
-      <h2>Sobre mí</h2>
-      <p><b>Developer Backend • DevOps • Data Analyst • Cloud • IA</b></p>
-      <p>Ingeniero de Sistemas en formación.<br>Desarrollador Backend, Analista de Datos, entusiasta de DevOps & Cloud, IA y Automatización.<br>Siempre aprendiendo.</p>
+      <h2 class="glitch" data-text="Sobre mí">Sobre mí</h2>
+      <p><b>Full Stack • DevOps • Data Analyst • Cloud • IA</b></p>
+      <p>Ingeniero de Sistemas en formación.<br>Desarrollador Full Stack, Analista de Datos, entusiasta de DevOps & Cloud, IA y Automatización.<br>Siempre aprendiendo.</p>
       <h3>Contacto</h3>
       <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
         <img src="https://cdn-icons-png.flaticon.com/32/561/561127.png" alt="Email icon" style="width:24px;height:24px;vertical-align:middle;">
@@ -35,7 +190,7 @@
       <a class="btn" href="https://github.com/Zanyllect68" target="_blank">Mi GitHub</a>
     </div>
     <div class="main">
-      <h2 id="projects">Proyectos destacados</h2>
+      <h2 id="projects" class="glitch" data-text="Proyectos destacados">Proyectos destacados</h2>
       <table>
         <tr>
           <th>Proyecto</th>
@@ -58,6 +213,13 @@
           <td><a href="https://github.com/Zanyllect68/script-auto_fuzzing" target="_blank">Ver repo</a></td>
         </tr>
       </table>
+      <!-- Terminal falsa debajo de la tabla -->
+      <div id="fake-terminal" style="margin:32px 0 0 0;width:100%;background:#181818;border-radius:12px;box-shadow:0 2px 12px #111;padding:24px 18px;color:#00ff00;font-family:monospace;font-size:1.08em;position:relative;">
+        <div style="margin-bottom:12px;">
+          <span style="color:#ff9900;">andres@retro-web</span>:<span style="color:#fff;">~</span>$ <span id="terminal-cmd"></span><span id="terminal-cursor" style="background:#00ff00;color:#181818;">█</span>
+        </div>
+        <div id="terminal-output"></div>
+      </div>
     </div>
   </div>
   <div class="gif-banner">
@@ -74,17 +236,86 @@
     <img src="l3vRi2Uo88yOG8X60.gif" width="80" height="80" class="giphy-embed" alt="gif local 11" />
     <img src="xsCevAab5ufj37BeGR.gif" width="80" height="80" class="giphy-embed" alt="gif local 12" />
   </div>
+  <!-- Chat MSN Messenger falso -->
+  <div id="msn-chat" style="position:fixed;bottom:18px;right:18px;width:320px;background:#232323;border:2px solid #0078d7;border-radius:12px;box-shadow:0 2px 16px #222;z-index:1001;font-family:Tahoma,Verdana,sans-serif;color:#eee;">
+    <div style="background:#0078d7;color:#fff;padding:8px 14px;border-top-left-radius:10px;border-top-right-radius:10px;font-weight:bold;display:flex;align-items:center;gap:8px;position:relative;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Msn_logo.png" alt="MSN" style="width:22px;height:22px;"> MSN Messenger
+      <button id="close-msn-chat" title="Cerrar" style="position:absolute;top:6px;right:8px;background:none;border:none;color:#fff;font-size:1.3em;cursor:pointer;line-height:1;">✖</button>
+    </div>
+    <div style="padding:12px 14px;min-height:90px;max-height:160px;overflow-y:auto;font-size:0.98em;">
+      <div style="margin-bottom:10px;"><b style="color:#66ccff;">Andrés:</b> ¡Hola! ¿Recuerdas el MSN Messenger?</div>
+      <div style="margin-bottom:10px;"><b style="color:#00ff99;">Tú:</b> ¡Claro! Qué nostalgia 😄</div>
+      <div style="margin-bottom:10px;"><b style="color:#66ccff;">Andrés:</b> Bienvenido a mi web retro, ¡explora mis proyectos!</div>
+      <div style="margin-bottom:10px;"><b style="color:#00ff99;">Tú:</b> Me encanta el estilo 2000s 🚀</div>
+    </div>
+    <div style="padding:8px 14px;border-top:1px solid #444;display:flex;align-items:center;gap:8px;">
+      <input type="text" placeholder="Escribe un mensaje..." disabled style="flex:1;padding:6px 10px;border-radius:6px;border:1px solid #444;background:#181818;color:#888;font-size:1em;">
+      <button disabled style="background:#0078d7;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-weight:bold;cursor:not-allowed;">Enviar</button>
+    </div>
+  </div>
+  <div id="crt-shutdown"></div>
   <footer class="footer">
     <p>© 2025 Andrés Galeano — Web 2000s</p>
   </footer>
   <script>
-    setTimeout(function() {
+    setTimeout(() => {
       document.getElementById('profile-loading').style.display = 'none';
       document.getElementById('profile-pic').style.display = 'block';
     }, 1500);
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+    // Terminal falsa typing
+    (() => {
+      const terminalCmd = document.getElementById('terminal-cmd');
+      const terminalCursor = document.getElementById('terminal-cursor');
+      const terminalOutput = document.getElementById('terminal-output');
+      const commands = [
+        { cmd: 'ls proyectos/', out: 'PQRS/  Votacion/  Fuzzing/' },
+        { cmd: 'cat sobre_mi.txt', out: 'Full Stack | DevOps | IA | Siempre aprendiendo' },
+        { cmd: 'echo "¡Bienvenido a mi web retro!"', out: '¡Bienvenido a mi web retro!' }
+      ];
+      let cmdIndex = 0,
+        charIndex = 0,
+        typing = true;
+      function typeCommand() {
+        if (cmdIndex >= commands.length) return;
+        const currentCmd = commands[cmdIndex].cmd;
+        if (charIndex < currentCmd.length) {
+          terminalCmd.textContent += currentCmd[charIndex++];
+          setTimeout(typeCommand, 60);
+        } else {
+          typing = false;
+          setTimeout(() => {
+            terminalOutput.innerHTML += `<div><span style="color:#ff9900;">andres@retro-web</span>:<span style="color:#fff;">~</span>$ ${currentCmd}</div>`;
+            terminalOutput.innerHTML += `<div>${commands[cmdIndex].out}</div>`;
+            terminalCmd.textContent = '';
+            charIndex = 0;
+            cmdIndex++;
+            typing = true;
+            setTimeout(typeCommand, 900);
+          }, 400);
+        }
+      }
+      typeCommand();
+      setInterval(() => {
+        terminalCursor.style.visibility = typing
+          ? (terminalCursor.style.visibility === 'hidden' ? 'visible' : 'hidden')
+          : 'visible';
+      }, 400);
+    })();
+    // CRT shutdown animation
+    window.addEventListener('beforeunload', function() {
+      const crt = document.getElementById('crt-shutdown');
+      crt.classList.add('active');
+      const start = Date.now();
+      while (Date.now() - start < 900) {}
+    });
+    // Cerrar chat MSN Messenger
+    document.getElementById('close-msn-chat').onclick = function() {
+      document.getElementById('msn-chat').style.display = 'none';
+    };
   </script>
 </body>
 
 </html>
-
-
