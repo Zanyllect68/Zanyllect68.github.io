@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300; /* más fino */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* IZQUIERDA (imagen) */
+.left {
+    width: 50%;
+    background: url("imagen.png") no-repeat center;
+    background-size: cover;
+}
+
+/* DERECHA (contenido + navbar) */
+.right {
+    width: 50%;
+    background: #0d0d0d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 🔥 NAVBAR ARRIBA DERECHA */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* CONTENIDO CENTRADO */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 🔥 centra horizontal */
+    text-align: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+button {
+    padding: 8px 18px;
+    font-size: 13px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    width: fit-content;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
