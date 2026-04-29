@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andres Galeano | Portafolio</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -18,11 +20,12 @@
         <a href="#">Inicio</a>
         <a href="#SobreMi">Sobre mí</a>
         <a href="#Proyectos">Proyectos</a>
+        <a href="#Articulos">Artículos</a>
     </nav>
 
     <div class="content">
         <h1>Andres Galeano</h1>
-        <p>Backend Developer & Data Analyst</p>
+        <p class="subtitle">Backend Developer & Data Analyst</p>
         <button>Próximamente</button>
     </div>
 
@@ -103,6 +106,38 @@
 
 </section>
 
+<!-- ARTÍCULOS -->
+<section id="Articulos" class="articles">
+
+    <h2>Artículos</h2>
+
+    <div class="article-grid">
+
+        <div class="article-card">
+            <h3>Título del artículo</h3>
+            <p class="article-date">28 Abr 2026</p>
+            <p>Breve descripción del contenido del artículo.</p>
+            <a href="#">Leer más →</a>
+        </div>
+
+        <div class="article-card">
+            <h3>Otro artículo</h3>
+            <p class="article-date">15 Abr 2026</p>
+            <p>Resumen de lo que aprenderás en este artículo.</p>
+            <a href="#">Leer más →</a>
+        </div>
+
+        <div class="article-card">
+            <h3>Más contenido</h3>
+            <p class="article-date">01 Abr 2026</p>
+            <p>Descripción corta del tema tratado.</p>
+            <a href="#">Leer más →</a>
+        </div>
+
+    </div>
+
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
     <p>© 2026 Andres Galeano</p>
@@ -112,7 +147,13 @@
         <a href="https://www.linkedin.com/in/andres-felipe-galeano-tellez-a7285a250/" target="_blank">LinkedIn</a>
         <a href="mailto:tuemail@email.com">Email</a>
     </div>
+    <a href="https://tryhackme.com/p/TuUsuario"></a>
 </footer>
+
+<!-- EFECTO DE CLICK -->
+<div id="click-effect"></div>
+
+<script type="module" src="js/main.js"></script>
 
 </body>
 </html>
